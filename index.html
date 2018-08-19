@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Persons per 100 sqm of Human Settlements</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/less" href="static/css/main.less" />
+
+    <!-- Less -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+
+    <!-- MAPBOX -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+
+    <!-- CHART JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+
+<body>
+    <div class='col12 contain fill-navy dark clip'>
+        <div class='col12 quiet' id="map">
+        </div>
+        <div class='fill-darken2 col2' id='legend'><h3>Persons per 100 sqm</h3><br></div>
+        <div class='pin-left'>
+            <a href="#filter" class='icon menu big'></a>
+        </div>
+        <div id='filter' class='col4 pad1 fill-darken2 pin-left offcanvas-left animate'>
+            <a href='#' class='fill-darken2 icon close'></a>
+            <div class='input-pill pad1x pad1y col12'><h2>Filter</h2></div>
+            <div class='input-pill pad1x pad1y col12'>
+                <input id='municity-text' class="col12" type="text" placeholder="city/municipality">
+                <!-- <input id='municity-btn' class="button col4" type="submit" value="Filter"> -->
+            </div>
+            <div class='input-pill pad1x pad1y col12'>
+                <input id='pd-comp-text' class="col4" type="text" placeholder="<=">
+                <input id='pd-num-text' class="col8" type="text" placeholder="persons/100sqm">
+                <!-- <input id='pd-max-text' class="col12" type="text" placeholder="max persons/100sqm"> -->
+                <!-- <input id='pd-btn' class="button col4" type="submit" value="Filter"> -->
+            </div>
+            <div class='input-pill pad1x pad4y col12'>
+                <input id='filter-btn' class="button col12" type="submit" value="Filter">
+                <input id='clear-btn' class="button quiet col12" type="submit" value="Clear">
+            </div>
+            <div class="small">
+                <p>Persons per 100 sqm in the barangay = average number of persons per unit area of human settlement in the barangay.
+                <br>
+                <br>Persons per unit area from <a href="https://www.ciesin.columbia.edu/data/hrsl/">CIESIN High Resolution Settlement Layer</a>
+                <br>Admin boundaries using GADM</p>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/main.js"></script>
+</body>
+</html>
